@@ -383,6 +383,8 @@ button {
   z-index: 1000; 
   opacity: 0.95;
   animation: fade-in-out 3s ease-in-out;
+  max-width: 90%; 
+  word-wrap: break-word; 
 }
 
 @keyframes fade-in-out {
@@ -390,7 +392,6 @@ button {
   10%, 90% { opacity: 0.95; transform: translateX(-50%) translateY(0); }
   100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
 }
-
 
 @keyframes scaleIn {
   0% {
@@ -400,6 +401,15 @@ button {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .custom-alert {
+    font-size: 14px; 
+    padding: 10px 15px; 
+    max-width: 95%; 
   }
 }
 

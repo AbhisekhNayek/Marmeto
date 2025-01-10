@@ -87,8 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </table>`
       )
       .join("");
-
-    attachEventListeners();
   };
 
   // Update the cart by rendering items and recalculating totals
@@ -100,25 +98,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /** Event Listeners */
 
-  // Attach event listeners to cart items
-  const attachEventListeners = () => {
-    // Listener for quantity change
-    document.querySelectorAll(".item-quantity").forEach((input) => {
-      input.addEventListener("change", (e) => {
-        const productId = parseInt(e.target.dataset.id);
-        const newQuantity = Math.max(1, parseInt(e.target.value));
-        updateItemQuantity(productId, newQuantity);
-      });
-    });
+  // Use event delegation for cart item events
+  cartContainer.addEventListener("click", (e) => {
+    // Handle remove item button click
+    if (e.target.closest(".remove-item")) {
+      productIdToRemove = parseInt(e.target.closest(".remove-item").dataset.id);
+      confirmationModal.style.display = "flex";
+    }
+  });
 
-    // Listener for item removal
-    document.querySelectorAll(".remove-item").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        productIdToRemove = parseInt(e.target.dataset.id);
-        confirmationModal.style.display = "flex";
-      });
-    });
-  };
+  // Listener for quantity change
+  cartContainer.addEventListener("change", (e) => {
+    if (e.target.classList.contains("item-quantity")) {
+      const productId = parseInt(e.target.dataset.id);
+      const newQuantity = Math.max(1, parseInt(e.target.value));
+      updateItemQuantity(productId, newQuantity);
+    }
+  });
 
   // Update the quantity of a specific item
   const updateItemQuantity = (productId, quantity) => {
@@ -166,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cartData = [];
     updateCart();
   });
-
 
   /** Initialization */
 

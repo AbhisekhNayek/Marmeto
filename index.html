@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./Public/Header/Logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Marmeto Shopping</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navigation">
+            <div class="logo-container">
+                <img src="./Public/Header/Logo.png" alt="Marmeto Logo">
+                <h5 class="heading">Marmeto</h5>
+            </div>
+
+            <!-- Navigation Menus -->
+            <ul class="menu-links" id="menu-links">
+                <a href="#" class="menu-item">Home</a>
+                <a href="#" class="menu-item">Shop</a>
+                <a href="#" class="menu-item">About</a>
+                <a href="#" class="menu-item">Contact</a>
+            </ul>
+
+            <!-- Icons for Search, Favourites, and Cart -->
+            <div class="icon-container">
+                <img src="./Public/Header/Search.png" alt="Search Icon" class="icon">
+                <img src="./Public/Header/Faviourite.png" alt="Favourite Icon" class="icon">
+                <img src="./Public/Header/Cart.png" alt="Cart Icon" class="icon">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Hero Section (Header for Cart Page) -->
+        <section class="hero-banner">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <img src="./Public/Header/Logo.png" alt="Marmeto Logo" class="hero-logo">
+                    <p class="hero-title">Cart</p>
+                    <nav class="breadcrumb">
+                        <span class="breadcrumb-link">Home</span>
+                        <span class="breadcrumb-separator">&#10095;</span>
+                        <span class="breadcrumb-current">Cart</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section class="cart-section">
+            <div id="loader" class="loader"></div>
+            <div class="cart-wrapper">
+                <!-- Cart Items Section (Items will be dynamically added here) -->
+                <div class="cart-items-container" id="cart-items">
+                    <!-- Dynamic Cart Items Will Appear Here -->
+                </div>
+
+                <!-- Cart Totals Section -->
+                <div class="cart-totals">
+                    <h2 class="cart-totals-heading">Cart Totals</h2>
+                    <div class="cart-summary">
+                        <p class="subtotal">Subtotal: <span id="cart-subtotal">Rs. 0.00</span></p>
+                        <p class="total">Total: <span id="cart-total">Rs. 0.00</span></p>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button id="checkout-btn">Check Out</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <div class="footer-item">
+                <div class="footer-image">
+                    <img src="./Public/Footer/High Quality.png" alt="High Quality Product">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">High Quality</p>
+                    <p class="footer-description">Crafted from top materials</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-image">
+                    <img src="./Public/Footer/Warranty.png" alt="Warranty Protection">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">Warranty Protection</p>
+                    <p class="footer-description">Over 2 years</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-image">
+                    <img src="./Public/Footer/Free Shipping.png" alt="Free Shipping">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">Free Shipping</p>
+                    <p class="footer-description">Order over 150 $</p>
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-image">
+                    <img src="./Public/Footer/Support.png" alt="24/7 Support">
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">24/7 Support</p>
+                    <p class="footer-description">Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Remove Confirmation Modal -->
+    <div id="removeModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to remove this item?</p>
+            <!-- Modal Buttons for Confirmation -->
+            <button id="confirmRemove">Yes</button>
+            <button id="cancelRemove">No</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
